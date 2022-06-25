@@ -10,6 +10,18 @@ public class Radio {
     private int currentVolume;
     private boolean on;
 
+    public Radio ( int minRadioStation,
+                   int currentRadioStation,
+                   int maxVolume,
+                   int minVolume,
+                   int currentVolume ) {
+        this.minRadioStation = minRadioStation;
+        this.currentRadioStation = currentRadioStation;
+        this.maxVolume = maxVolume;
+        this.minVolume = minVolume;
+        this.currentVolume = currentVolume;
+    }
+
     public Radio() {
         maxRadioStation = 9;
     }
