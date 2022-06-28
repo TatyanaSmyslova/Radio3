@@ -23,7 +23,7 @@ public class RadioTest {
 
     @Test
     public void changeAfterLastRadioStation() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (10);
         radio.pressNextStation();
         assertEquals(1, radio.getCurrentRadioStation());
     }
@@ -37,7 +37,7 @@ public class RadioTest {
 
     @Test
     public void nextRadioStation() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (9);
         radio.pressNextStation();
         assertEquals(1, radio.getCurrentRadioStation());
     }
@@ -51,39 +51,38 @@ public class RadioTest {
 
     @Test
     public void afterInitialRadioStation() {
-        Radio radio = new Radio (5);
-        assertEquals(4, radio.getMaxRadioStation());
+        Radio radio = new Radio (1);
+        assertEquals(0, radio.getMaxRadioStation());
     }
 
     @Test
     public void underInitialRadioStation() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (0);
         assertEquals(0, radio.getMinRadioStation());
     }
 
-    // volume
     @Test
     public void volumeOverMax() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (101);
         assertEquals(100, radio.getMaxVolume());
     }
 
     @Test
     public void volumeDownUnderMin() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (-1);
         assertEquals(0, radio.getMinVolume());
     }
 
     @Test
     public void plusVolume() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (0);
         radio.pressPlusVolume();
         assertEquals(1, radio.getCurrentVolume());
     }
 
     @Test
     public void minusVolume() {
-        Radio radio = new Radio (5);
+        Radio radio = new Radio (1);
         radio.pressMinusVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
